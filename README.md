@@ -9,7 +9,7 @@ Template for an [Action Platform](https://github.com/actionplatform/action-platf
 | `cli.py` | `action-platform example hello` |
 | `rules.py` | a replaced core slot (`gitflow_rules`) — stricter branch kinds while the plugin is enabled |
 | `release.py` | named providers: `[release] strategy = "calver"`, `[release] changelog = "plain"` |
-| `overlays/` | a cloud overlay `example`, applied by `action-platform cloud set example` |
+| `overlays/` | a cloud overlay `example` — plain files, copied as they are by `action-platform cloud set example`; add a `cookiecutter.json` only when the files need rendering |
 
 ## Use this template
 

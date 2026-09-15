@@ -28,7 +28,7 @@ build-backend = "setuptools.build_meta"
 include = ["action_platform_plugin_example*"]
 
 [tool.setuptools.package-data]
-action_platform_plugin_example = ["overlays/**/*", "overlays/**/.*"]
+action_platform_plugin_example = ["overlays/**/*"]
 
 [tool.ruff]
 line-length = 88
