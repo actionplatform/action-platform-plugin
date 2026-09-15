@@ -9,7 +9,7 @@ from tempfile import TemporaryDirectory
 from action_platform.core.flow import gitflow
 from action_platform.core.scaffold.templates import Matrix, with_plugin_clouds
 from action_platform.core.wiring import wired
-from action_platform.plugins import Loaded, PluginState, Plugins, registry
+from action_platform.plugins import Loaded, Plugins, PluginState, registry
 
 from apx_example import ExamplePlugin
 from apx_example.release import Calver, Plain
