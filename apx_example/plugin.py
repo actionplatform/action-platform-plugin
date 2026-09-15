@@ -24,8 +24,10 @@ class ExamplePlugin(Plugin):
         return Path(__file__).parent / "overlays"
 
     def register(self, surface: Surface) -> None:
+        self.options = surface.options
+
         if surface.mcp is not None:
-            register_tools(surface.mcp)
+            register_tools(surface.mcp, surface.options)
 
         if surface.cli is not None:
             surface.cli.add_typer(cli.app, name="example")
@@ -33,6 +35,7 @@ class ExamplePlugin(Plugin):
         surface.core.replace("gitflow_rules", StrictRules)
 
     def after_release(self, ctx: Context) -> None:
+        self.options.set("last_release", ctx.next_version)
         logger.info(f"example: released {ctx.next_version} from {ctx.branch}")
 
     def after_deploy(self, results: list[DeployResult]) -> None:

@@ -5,7 +5,7 @@ Template for an [Action Platform](https://github.com/actionplatform/action-platf
 | File | Extension point |
 |---|---|
 | `plugin.py` | the `Plugin`: slug, `needs`, `register`, `after_release`, `after_deploy` |
-| `tools.py` | an MCP tool, published as `example_hello` with input and output schemas |
+| `tools.py` | MCP tools `example_hello` and `example_remember`, with input and output schemas; `remember` writes the plugin's options store |
 | `cli.py` | `action-platform example hello` |
 | `rules.py` | a replaced core slot (`gitflow_rules`) — stricter branch kinds while the plugin is enabled |
 | `release.py` | named providers: `[release] strategy = "calver"`, `[release] changelog = "plain"` |
