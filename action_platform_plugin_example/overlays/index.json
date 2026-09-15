@@ -1,0 +1,10 @@
+{
+  "clouds": [
+    {
+      "id": "example",
+      "description": "Example overlay: one file that says where the project deploys",
+      "types": ["web", "library", "automation", "docs", "plugin", "empty"],
+      "languages": []
+    }
+  ]
+}
