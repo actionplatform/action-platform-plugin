@@ -1,0 +1,13 @@
+[project]
+name = "apx-example"
+type = "library"
+language = "python"
+ci = "github"
+
+[source_host]
+kind = "github"
+repo = "actionplatform/apx-example"
+
+[release]
+strategy = "semver"
+changelog = "conventional"
