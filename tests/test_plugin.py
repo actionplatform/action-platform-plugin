@@ -11,15 +11,15 @@ from action_platform.core.scaffold.templates import Matrix, with_plugin_clouds
 from action_platform.core.wiring import wired
 from action_platform.plugins import Loaded, PluginState, Plugins, registry
 
-from action_platform_plugin_example import ExamplePlugin
-from action_platform_plugin_example.release import Calver, Plain
+from apx_example import ExamplePlugin
+from apx_example.release import Calver, Plain
 
 
 class ExamplePluginTest(unittest.TestCase):
     def setUp(self):
         self.tmp = TemporaryDirectory()
         self.plugins = Plugins(
-            [Loaded(ExamplePlugin(), "action-platform-plugin-example", "0.1.0")],
+            [Loaded(ExamplePlugin(), "apx-example-example", "0.1.0")],
             PluginState(file=Path(self.tmp.name) / "plugins.json"),
         )
         registry._current = self.plugins
@@ -33,9 +33,9 @@ class ExamplePluginTest(unittest.TestCase):
         mcp = server.build()
         names = {t.name for t in asyncio.run(mcp.list_tools())}
 
-        self.assertIn("example.hello", names)
+        self.assertIn("example_hello", names)
 
-        result = asyncio.run(mcp.call_tool("example.hello", {"name": "you"}))
+        result = asyncio.run(mcp.call_tool("example_hello", {"name": "you"}))
 
         self.assertEqual(json.loads(result.content[0].text)["greeting"], "hello you")
 

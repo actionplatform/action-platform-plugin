@@ -1,4 +1,4 @@
-"""MCP tools. They come out as `example.<name>`; annotate inputs and return a model or a typed dict so the client gets schemas."""
+"""MCP tools. They come out as `example_<name>`; annotate inputs and return a model or a typed dict so the client gets schemas."""
 
 from __future__ import annotations
 

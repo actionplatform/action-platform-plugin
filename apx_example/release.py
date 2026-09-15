@@ -12,9 +12,7 @@ class Calver(ReleaseStrategy):
 
     name = "calver"
 
-    def next(
-        self, current: str, level: str, prerelease: bool, taken: list[str]
-    ) -> str:
+    def next(self, current: str, level: str, prerelease: bool, taken: list[str]) -> str:
         today = date.today()
         prefix = f"{today.year}.{today.month:02d}."
         used = [

@@ -8,9 +8,9 @@ from action_platform.abc import Plugin, Surface
 from action_platform.core.context import Context, DeployResult
 from action_platform.logging import logger
 
-from action_platform_plugin_example import cli
-from action_platform_plugin_example.rules import StrictRules
-from action_platform_plugin_example.tools import register_tools
+from apx_example import cli
+from apx_example.rules import StrictRules
+from apx_example.tools import register_tools
 
 
 class ExamplePlugin(Plugin):
