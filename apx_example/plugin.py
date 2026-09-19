@@ -15,8 +15,8 @@ from apx_example.tools import register_tools
 
 class ExamplePlugin(Plugin):
     slug = "example"
-    description = "Template plugin: a tool, a command, an overlay, a release strategy, stricter git-flow"
-    min_core = "0.16"
+    description = "Template plugin: a tool, a command, a deploy target with readiness, an overlay, a release strategy, stricter git-flow"
+    min_core = "0.26"
     needs = ["nothing outside this machine"]
 
     @property

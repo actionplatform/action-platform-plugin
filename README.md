@@ -9,12 +9,13 @@ Template for an [Action Platform](https://github.com/actionplatform/action-platf
 | `cli.py` | `action-platform example hello` |
 | `rules.py` | a replaced core slot (`gitflow_rules`) — stricter branch kinds while the plugin is enabled |
 | `release.py` | named providers: `[release] strategy = "calver"`, `[release] changelog = "plain"` |
+| `target.py` | the `DeployTarget` for the `example` cloud: `preflight`, `readiness` (checks before a deploy), `deploy` (streams its output to the job log), `verify`, `diagnose`, `delete` |
 | `overlays/` | a cloud overlay `example` — plain files, copied as they are by `action-platform cloud set example`; add a `cookiecutter.json` only when the files need rendering |
 
 ## Use this template
 
 1. Create a repository from it, named `apx-<slug>`.
-2. Rename `apx_example` → `apx_<slug>`, `example` → `<slug>` in `pyproject.toml` (package name, entry points), `plugin.py` (`slug`), `cli.py`, `overlays/index.json`.
+2. Rename `apx_example` → `apx_<slug>`, `example` → `<slug>` in `pyproject.toml` (package name, entry points), `plugin.py` (`slug`), `target.py` (`name`), `cli.py`, `overlays/index.json`.
 3. Delete what you do not need; a plugin with only `plugin.py` and one tool is fine.
 4. `pip install -e ".[dev]"`, `pytest`, `action-platform plugin list` (shows `example` once installed).
 5. Publish to PyPI; open a pull request to [plugins-index](https://github.com/actionplatform/plugins-index) with `<slug>.json`.
