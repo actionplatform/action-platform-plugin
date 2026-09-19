@@ -24,11 +24,14 @@ class MyPlugin(Plugin):
     options = [Option(key="project_id", label="Project", kind="text", required=True)]
 
     @property
-    def overlays(self) -> Path: ...          # folder shaped like the templates repository
-    def register(self, surface: Surface): ...  # declare only: tools, commands, slots — no I/O
-    def after_release(self, ctx): ...          # optional
-    def after_deploy(self, results): ...       # optional
+    def overlays(self) -> Path:
+        return Path(__file__).parent / "overlays"
+
+    def register(self, surface: Surface) -> None:
+        surface.cli.add_typer(cli.app, name="my-cloud")
 ```
+
+`overlays` points at a folder shaped like the templates repository; `register` declares only (tools, commands, slots); `after_release(ctx)` and `after_deploy(results)` are optional hooks.
 
 - `needs` lists every host the plugin talks to and every environment variable it reads; the CLI shows it before installing.
 - `options` are what an organization fills in under Plugins → Configure; the platform stores them and passes each to a deploy as `AP_<SLUG>_<KEY>` (upper case, `-` → `_`) in `ctx.env`, plus `AP_APP=<org>/<project>/<app>`.
