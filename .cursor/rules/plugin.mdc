@@ -1,0 +1,12 @@
+---
+description: Action Platform plugin authoring — the contract in SPEC.md, the steps in skills/create-plugin/SKILL.md
+globs: ["**/*.py", "**/pyproject.toml", "**/overlays/**"]
+alwaysApply: true
+---
+
+- Read `SPEC.md` before changing code; follow `skills/create-plugin/SKILL.md` when creating a plugin from this template.
+- `Plugin.register` declares only: no I/O, threads or connections at import or in `register`. Never monkey-patch `action_platform.*`.
+- `DeployTarget`: `ctx.stage` is the scope's name; `readiness(ctx)` returns `Check`s without building or changing anything; long commands run through `action_platform.core.process.stream`.
+- Overlay: one IaC file per cloud with the runtime chosen by `{{ cookiecutter.language }}`, a one-line `Makefile` calling `ap-build package`, `requirements/`, `DEPLOY.md`. No `_lang/` folders.
+- Style: no comments inside function bodies, no test docstrings; `ruff check . && ruff format --check . && pytest` before a commit.
+- Git-flow branches `<kind>/<issue>-<slug>`, Conventional Commits, one PR per issue.

@@ -1,0 +1,21 @@
+{
+  "name": "apx-example",
+  "version": "0.3.0",
+  "description": "Create an Action Platform plugin from the template.",
+  "author": { "name": "Action Platform", "url": "https://github.com/actionplatform" },
+  "homepage": "https://github.com/actionplatform/apx-example",
+  "repository": "https://github.com/actionplatform/apx-example",
+  "license": "Apache-2.0",
+  "keywords": ["action-platform", "plugin", "template"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Action Platform — plugin authoring",
+    "shortDescription": "New apx-<slug> from the template",
+    "longDescription": "Walks through creating an Action Platform plugin: Plugin class with needs and options, DeployTarget with readiness, one overlay for every language built by ap-build, tests, release and the plugins-index entry.",
+    "developerName": "Action Platform",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/actionplatform/apx-example",
+    "defaultPrompt": ["Create a plugin apx-gcp-cloudrun for the cloud gcp/cloudrun.", "Add readiness checks to my deploy target.", "Turn my per-language overlay into one template built by ap-build."]
+  }
+}
