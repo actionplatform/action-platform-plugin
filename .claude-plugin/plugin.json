@@ -1,0 +1,12 @@
+{
+  "name": "apx-example",
+  "displayName": "Action Platform — plugin authoring",
+  "version": "0.3.0",
+  "description": "Create an Action Platform plugin (apx-<slug>) from the template: deploy target with readiness, one overlay for every language, tools, tests, release, plugins-index.",
+  "author": { "name": "Action Platform", "url": "https://github.com/actionplatform" },
+  "homepage": "https://github.com/actionplatform/apx-example",
+  "repository": "https://github.com/actionplatform/apx-example",
+  "license": "Apache-2.0",
+  "keywords": ["action-platform", "plugin", "template", "deploy-target", "overlay"],
+  "skills": "./skills/"
+}

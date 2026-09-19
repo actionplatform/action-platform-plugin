@@ -12,6 +12,10 @@ Template for an [Action Platform](https://github.com/actionplatform/action-platf
 | `target.py` | the `DeployTarget` for the `example` cloud: `preflight`, `readiness` (checks before a deploy), `deploy` (streams its output to the job log), `verify`, `diagnose`, `delete` |
 | `overlays/` | a cloud overlay `example` — plain files, copied as they are by `action-platform cloud set example`; add a `cookiecutter.json` only when the files need rendering |
 
+## For agents and editors
+
+`SPEC.md` is the contract a plugin follows. `skills/create-plugin/SKILL.md` walks an agent through creating `apx-<slug>` from here — installable in Claude Code (`/plugin marketplace add actionplatform/apx-example`, then `/plugin install apx-example@apx-example`), read by Codex through `.codex-plugin/`, and mirrored for Cursor in `.cursor/rules/plugin.mdc`. `AGENTS.md` holds the repository rules every agent reads.
+
 ## Use this template
 
 1. Create a repository from it, named `apx-<slug>`.

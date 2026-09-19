@@ -1,0 +1,8 @@
+{
+  "name": "apx-example",
+  "description": "Plugin authoring for Action Platform: the skill that creates an apx-<slug> from this template.",
+  "owner": { "name": "Action Platform", "url": "https://github.com/actionplatform" },
+  "plugins": [
+    { "name": "apx-example", "source": "./", "description": "create-plugin: deploy target with readiness, one-file overlay, tests, release, plugins-index." }
+  ]
+}
