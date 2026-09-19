@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.0 — 2026-09-19
+
+### Features
+- **target:** the template shows a DeployTarget with readiness
+- tools read and write the plugin's options store
+
 ## v0.1.0 — 2026-09-15
 
 ### Features
